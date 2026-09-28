@@ -1,0 +1,12 @@
+2026-09-29 10:42:11 ERROR User login failed user=admin ip=10.0.0.15 reason=bad_password
+2026-09-29 10:42:19 INFO User login successful user=anshum ip=10.0.0.20 session=sess_9821
+2026-09-29 10:43:01 WARN Invalid token user=guest ip=10.0.0.30 endpoint=/api/v2/reports
+2026-09-29 10:43:15 INFO Password reset requested user=alice ip=192.168.1.99 token=rst_3391
+2026-09-29 10:43:40 ERROR Database timeout on query latency=4502ms host=db-primary
+2026-09-29 10:44:05 WARN Rate limit exceeded user=crawler_bot ip=198.51.100.90 hits=120
+2026-09-29 10:44:22 INFO Payment processed order_id=ord_9901 amount=149.99 status=success
+2026-09-29 10:44:59 ERROR Out of memory error in worker pool worker_id=wk_04
+2026-09-29 10:45:12 INFO User logout user=anshum ip=10.0.0.20 duration=173s
+2026-09-29 10:45:45 WARN Suspicious header detected user=attacker ip=203.0.113.19 agent="sqlmap/1.5"
+2026-09-29 10:46:01 INFO Cache cleared by admin user=admin ip=10.0.0.15 keys=450
+2026-09-29 10:46:33 DEBUG Health check ping from load balancer ip=10.0.0.1 status=ok

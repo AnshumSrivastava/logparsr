@@ -1,0 +1,12 @@
+Sep 29 10:31:02 server sshd[1234]: Failed password for admin from 192.168.1.20 port 42132
+Sep 29 10:31:08 server sshd[1235]: Accepted password for anshum from 192.168.1.15 port 42141
+Sep 29 10:31:19 server sshd[1236]: Failed password for root from 10.0.0.12 port 43121
+Sep 29 10:31:25 server sshd[1237]: Failed password for invalid user oracle from 203.0.113.45 port 55122
+Sep 29 10:31:40 server sshd[1238]: Failed password for invalid user test from 203.0.113.45 port 55198
+Sep 29 10:32:01 server sshd[1239]: Accepted publickey for deployer from 192.168.1.50 port 38910
+Sep 29 10:32:15 server sshd[1240]: Connection closed by authenticating user root 198.51.100.14 port 49102 [preauth]
+Sep 29 10:32:44 server sshd[1241]: Failed password for root from 10.0.0.12 port 43190
+Sep 29 10:33:02 server sshd[1242]: Accepted password for anshum from 192.168.1.15 port 42200
+Sep 29 10:33:18 server sshd[1243]: Invalid user guest from 198.51.100.77 port 39820
+Sep 29 10:34:05 server sshd[1244]: Received disconnect from 203.0.113.45 port 55301: 11: Bye Bye [preauth]
+Sep 29 10:35:10 server sshd[1245]: Accepted password for backup from 192.168.1.80 port 41209
