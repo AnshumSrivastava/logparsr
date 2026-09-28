@@ -77,11 +77,19 @@ Sep 29 10:51:44 firewall-edge kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:3
   $: generatedRegex = buildGeneratedRegex(fields);
   $: parsed = parseLogData(rawLog, fields, generatedRegex);
 
+  function normalizeRegexPattern(pattern) {
+    if (!pattern) return '';
+    let p = pattern.trim();
+    // Auto-normalize hyphenated quantifier ranges like {1-3} -> {1,3}
+    p = p.replace(/\{(\d+)\s*-\s*(\d*)\}/g, '{$1,$2}');
+    return p;
+  }
+
   function buildGeneratedRegex(fieldList) {
     const valid = fieldList.filter(f => f.name.trim() !== '' && f.pattern.trim() !== '');
     if (valid.length === 0) return '';
     return valid
-      .map(f => `(?<${cleanGroupName(f.name)}>${f.pattern.trim()})`)
+      .map(f => `(?<${cleanGroupName(f.name)}>${normalizeRegexPattern(f.pattern)})`)
       .join('.*?');
   }
 
@@ -164,10 +172,11 @@ Sep 29 10:51:44 firewall-edge kernel: [UFW BLOCK] IN=eth0 OUT= MAC=52:54:00:12:3
       .filter(f => f.name.trim() !== '' && f.pattern.trim() !== '')
       .map(f => {
         const cName = cleanGroupName(f.name);
+        const normPattern = normalizeRegexPattern(f.pattern);
         try {
           return {
             name: cName,
-            reg: new RegExp(`(?<${cName}>${f.pattern.trim()})`)
+            reg: new RegExp(`(?<${cName}>${normPattern})`)
           };
         } catch {
           return null;
